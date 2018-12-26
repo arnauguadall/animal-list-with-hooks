@@ -10,12 +10,15 @@ export default function List() {
 	/* 
 		State variables will be defined separetly with a method to execute them and a initial value.
 
-		animalList:     State variable
-		setAnimalList:  Method to set the value to 'animalList' variable
-		useState: 		Work the same was as default props giving the 'animalList'
+		dogList:     State variable
+		setdogList:  Method to set the value to 'dogList' variable
+		useState: 		Work the same was as default props giving the 'dogList'
 				   		an initial value in this case an empty array.
 	*/
-	const [animalList, setAnimalList] = useState([]);
+	const [dogList, setdogList] = useState([]);
+
+	// Giving the value to our custom HOOK.
+	useCustomTitleChange("Dog list");
 
 	/* 
 		The old lifecycle (componentDidMount, componentDidUpdate, componentWillUnmount, ...) has been simplified
@@ -26,16 +29,26 @@ export default function List() {
 	useEffect(() => {
 		axios.get(`https://dog.ceo/api/breeds/list/all`)
 			.then(response => {
-				// Setting 'animalList' by executing 'setAnimalList' when the data has been received.
-				setAnimalList(response.data.message);
+				// Setting 'dogList' by executing 'setdogList' when the data has been received.
+				setdogList(response.data.message);
 			})
 	})
 
+	/* 
+		Custom HOOK to change the title when the webpage refreshes. In this case we could use this with an input change,
+		button event or if we receive some data the 'useEffect' will know when it need to rerender and execute the effect.
+	*/
+	function useCustomTitleChange(title) {
+		useEffect(() => {
+			document.title = title;
+		})
+	}
+
 	return (
 		<ul>
-			{Object.keys(animalList).map(animal =>
-				<li key={animal}>
-					{animal}
+			{Object.keys(dogList).map(dog =>
+				<li key={dog}>
+					{dog}
 				</li>)}
 		</ul>
 	);
