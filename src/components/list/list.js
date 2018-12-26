@@ -3,18 +3,18 @@ import axios from 'axios';
 import './List.css';
 
 /* 
-	The class declaration 'class List extends Component' will be replaced for
+    The class declaration 'class List extends Component' will be replaced for
 	'export default function List()' in order every 'component' will be a
 	function and no longer we will declare a React Class.
 */
 export default function List() {
-	/* 
-		State variables will be defined separetly with a method to execute them and a initial value.
+	/*     
+        State variables will be defined separetly with a method to execute them and a initial value.
 
-		dogList:    State variable
-		setdogList: Method to set the value to 'dogList' variable
-		useState: 	Work the same was as default props giving the 'dogList'
-				   	an initial value in this case an empty array.
+        dogList:        State variable
+        setdogList:     Method to set the value to 'dogList' variable
+        useState: 	    Work the same was as default props giving the 'dogList'
+                        an initial value in this case an empty array.
 	*/
     const [dogList, setdogList] = useState([]);
 
