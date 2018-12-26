@@ -1,4 +1,4 @@
 # animals-with-react-hooks
-Just a simple project to test the new feature in react with HOOKS.
+It's just a simple project to test the new feature proposed by the react team regarding HOOKS.
 
-In this project I will use a list of animals provided by https://dog.ceo/dog-api/ endpoint.
+In this project I will use a list of animals provided by https://dog.ceo/dog-api/ endpoint to list them all. I started with the package 'create-react-app'
